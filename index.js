@@ -14,6 +14,7 @@ const { GitHub, context } = require("@actions/github");
     const labels = core
       .getInput("labels")
       .split("\n")
+      .split(",")
       .filter((x) => x !== "");
     const issueNumber = context.payload.number;
 
