@@ -25446,8 +25446,7 @@ const { GitHub, context } = __nccwpck_require__(3134);
     const { owner, repo } = context.repo;
     const labels = core
       .getInput("labels")
-      .split("\n")
-      .split(",")
+      .split("/[\n,]+/")
       .filter((x) => x !== "");
     const issueNumber = context.payload.number;
 
