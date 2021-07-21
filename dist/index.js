@@ -25446,12 +25446,12 @@ const { GitHub, context } = __nccwpck_require__(3134);
     const { owner, repo } = context.repo;
     const labels = core
       .getInput("labels")
-      .split(",")
+      .split(/[\n,]/)
       .filter((x) => x !== "");
     const issueNumber = context.payload.number;
 
     console.log(core.getInput("labels"))
-    console.log(core.getInput("labels").split(","))
+    console.log(core.getInput("labels").split(/[\n,]/))
 
     core.info(`Add labels: ${labels} to ${owner}/${repo}#${issueNumber}`);
 
